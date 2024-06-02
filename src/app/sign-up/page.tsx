@@ -1,5 +1,5 @@
-import AuthButton from "@/components/auth-button";
-import SignUpForm from "@/components/sign-up-form";
+import AuthButton from "@/components/auth-forms/auth-button";
+import SignUpForm from "@/components/auth-forms/sign-up-form";
 import { Separator } from "@/components/ui/separator";
 import { getServerAuthSession } from "@/server/auth";
 import Link from "next/link";

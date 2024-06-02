@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import { BsRecord2 } from "react-icons/bs";
 import {
   Tooltip,
@@ -20,6 +20,7 @@ const RecordScreenButton: React.FC = (): JSX.Element => {
   const { startRecording, stopRecording, isRecording, recordedBlob } =
     useScreenRecording();
   const { isUploadingVideo, startUploading, videoUrl } = useVideoUpload();
+  const memoizedUrl = useMemo(() => videoUrl, [videoUrl]);
   const { toast } = useToast();
 
   const { mutate } = useMutation({
@@ -29,10 +30,11 @@ const RecordScreenButton: React.FC = (): JSX.Element => {
     onSuccess: () => {
       toast({
         title: "Video saved successfully",
-        description: "You can find it in your gallery",
+        // description: `${data.id}`,
       });
     },
-    onError: () => {
+    onError: (err) => {
+      console.log("err", err);
       toast({
         title: "Error while saving video!",
         variant: "destructive",
@@ -51,10 +53,10 @@ const RecordScreenButton: React.FC = (): JSX.Element => {
   }, [recordedBlob]);
 
   useEffect(() => {
-    if (videoUrl) {
-      mutate(videoUrl);
+    if (memoizedUrl) {
+      mutate(memoizedUrl);
     }
-  }, [videoUrl, mutate]);
+  }, [memoizedUrl, mutate]);
 
   return (
     <>

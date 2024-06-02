@@ -16,17 +16,6 @@ export const signUpWithEmailAndPassword = async (
   return user;
 };
 
-export const getImagesOfUser = async () => {
-  const authUser = await getServerAuthSession();
-
-  const images = await db.images.findMany({
-    where: {
-      userId: authUser?.user?.id,
-    },
-  });
-  return images;
-};
-
 export const createImage = async ({ url }: { url: string }) => {
   const authUser = await getServerAuthSession();
   if (!authUser) throw new Error("Not authenticated");

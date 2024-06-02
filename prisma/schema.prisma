@@ -46,6 +46,7 @@ model User {
     emailVerified  DateTime?
     image          String?
     password       String?
+    createdAt      DateTime  @default(now())
     accounts       Account[]
     sessions       Session[]
     uploadedImages Images[]
@@ -63,15 +64,19 @@ model VerificationToken {
 ///////////////////////////////////////////////////////////////////////
 
 model Images {
-    id     String @id @default(cuid())
-    url    String
-    User   User   @relation(fields: [userId], references: [id])
-    userId String
+    id        String   @id @default(cuid())
+    url       String
+    User      User     @relation(fields: [userId], references: [id])
+    userId    String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
 }
 
 model Videos {
-    id     String @id @default(cuid())
-    url    String
-    User   User   @relation(fields: [userId], references: [id])
-    userId String
+    id        String   @id @default(cuid())
+    url       String
+    User      User     @relation(fields: [userId], references: [id])
+    userId    String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
 }

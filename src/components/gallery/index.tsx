@@ -2,7 +2,7 @@
 import React from "react";
 import { Separator } from "../ui/separator";
 import { useQuery } from "@tanstack/react-query";
-import { getImagesOfUser } from "@/mutations";
+import { getImagesOfUser } from "@/queries";
 import { LuAlertCircle } from "react-icons/lu";
 import { IoCloudUploadOutline } from "react-icons/io5";
 import UploadPhotoButton from "./uploadPhotoButton";
@@ -54,7 +54,7 @@ const Gallery = () => {
                         height={180}
                         key={image.id}
                         src={image.url}
-                        className="h-[180px] w-[180px] rounded-lg object-cover"
+                        className="h-[180px] w-[180px] cursor-pointer rounded-lg object-cover"
                       />
                     ))}
                   </div>

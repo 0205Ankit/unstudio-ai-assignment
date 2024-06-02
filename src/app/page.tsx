@@ -12,7 +12,11 @@ export default async function HomePage() {
   return (
     <main>
       <Header />
-      <div className="m-10 flex gap-10">
+      <p className="mt-5 text-center text-xl font-medium">
+        Drag and drop images from your Gallery to the Canvas below and start
+        editing them
+      </p>
+      <div className="mx-10 mb-10 mt-5 flex gap-10">
         <DragProvider>
           <Canvas />
           <Gallery />
