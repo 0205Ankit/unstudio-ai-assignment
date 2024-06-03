@@ -8,7 +8,6 @@ import { type Adapter } from "next-auth/adapters";
 import GithubProvider from "next-auth/providers/github";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcrypt";
-import { env } from "@/env";
 import { db } from "@/server/db";
 
 declare module "next-auth" {

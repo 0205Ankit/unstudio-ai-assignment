@@ -50,6 +50,7 @@ const RecordScreenButton: React.FC = (): JSX.Element => {
       };
       void asyncFunction();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [recordedBlob]);
 
   useEffect(() => {
