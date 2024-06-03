@@ -30,7 +30,6 @@ const RecordScreenButton: React.FC = (): JSX.Element => {
     onSuccess: () => {
       toast({
         title: "Video saved successfully",
-        // description: `${data.id}`,
       });
     },
     onError: (err) => {
@@ -50,8 +49,7 @@ const RecordScreenButton: React.FC = (): JSX.Element => {
       };
       void asyncFunction();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [recordedBlob]);
+  }, [recordedBlob, startUploading]);
 
   useEffect(() => {
     if (memoizedUrl) {

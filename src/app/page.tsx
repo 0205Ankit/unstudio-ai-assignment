@@ -18,7 +18,7 @@ export default async function HomePage() {
       </p>
       <div className="mx-10 mb-10 mt-5 flex gap-10">
         <DragProvider>
-          <Canvas />
+          {/* <Canvas /> */}
           <Gallery />
         </DragProvider>
       </div>
