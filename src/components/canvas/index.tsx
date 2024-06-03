@@ -15,8 +15,8 @@ import RecordScreenButton from "./recordScreenButton";
 
 const Canvas = () => {
   const [canvas, setCanvas] = useState<fabric.Canvas>();
-  const canvasContainerRef = React.useRef<HTMLDivElement>(null);
-  const canvasRef = React.useRef<HTMLCanvasElement>(null);
+  const canvasContainerRef = React.useRef<HTMLDivElement | null>(null);
+  const canvasRef = React.useRef<HTMLCanvasElement | null>(null);
   const { dragData, setDragItem } = useDragContext();
   const [textValue, setTextValue] = useState("");
 

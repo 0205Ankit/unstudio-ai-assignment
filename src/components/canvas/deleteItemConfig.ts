@@ -1,4 +1,5 @@
-import {fabric} from "fabric";
+"use client";
+import { fabric } from "fabric";
 
 export const deleteItemControl = new fabric.Control({
   x: 0.5,

@@ -1,3 +1,4 @@
+"use client";
 import { fabric } from "fabric";
 import { deleteItemControl } from "./deleteItemConfig";
 import { LuMinus, LuRectangleHorizontal, LuCircle } from "react-icons/lu";
@@ -14,8 +15,7 @@ export const addImage = (imgUrl: string, canvas?: fabric.Canvas) => {
       canvasWidth,
       itemHeight: imgHeight,
       itemWidth: imgWidth,
-    } = getItemAndCanvasDimensions
-    (canvas, img);
+    } = getItemAndCanvasDimensions(canvas, img);
 
     img.set({
       left: (canvasWidth - imgWidth) / 2,
@@ -41,8 +41,7 @@ export const addRectangle = (canvas?: fabric.Canvas) => {
     canvasWidth,
     itemHeight: rectHeight,
     itemWidth: rectWidth,
-  } = getItemAndCanvasDimensions
-  (canvas, rect);
+  } = getItemAndCanvasDimensions(canvas, rect);
 
   rect.set({
     left: (canvasWidth - rectWidth) / 2,
@@ -55,7 +54,7 @@ export const addRectangle = (canvas?: fabric.Canvas) => {
 
 // add circle to canvas
 export const addCircle = (canvas?: fabric.Canvas) => {
-  if(!canvas) return;
+  if (!canvas) return;
   const circle = new fabric.Circle({
     radius: 50,
     fill: "#2BEBC8",
@@ -66,8 +65,7 @@ export const addCircle = (canvas?: fabric.Canvas) => {
     canvasWidth,
     itemHeight: circleHeight,
     itemWidth: circleWidth,
-  } = getItemAndCanvasDimensions
-  (canvas, circle);
+  } = getItemAndCanvasDimensions(canvas, circle);
 
   circle.set({
     left: (canvasWidth - circleWidth) / 2,
@@ -79,10 +77,9 @@ export const addCircle = (canvas?: fabric.Canvas) => {
   canvas?.requestRenderAll();
 };
 
-
 // add line to canvas
 export const addLine = (canvas?: fabric.Canvas) => {
-  if(!canvas) return;
+  if (!canvas) return;
   const line = new fabric.Line([100, 100, 200, 200], {
     fill: "#2BEBC8",
     stroke: "#2BEBC8",
@@ -93,8 +90,7 @@ export const addLine = (canvas?: fabric.Canvas) => {
     canvasWidth,
     itemHeight: lineHeight,
     itemWidth: lineWidth,
-  } = getItemAndCanvasDimensions
-  (canvas, line);
+  } = getItemAndCanvasDimensions(canvas, line);
 
   line.set({
     left: (canvasWidth - lineWidth) / 2,
@@ -106,10 +102,9 @@ export const addLine = (canvas?: fabric.Canvas) => {
   canvas?.requestRenderAll();
 };
 
-
 // add text to canvas
 export const addText = (canvas?: fabric.Canvas, textValue?: string) => {
-  if(!canvas) return;
+  if (!canvas) return;
   const text = new fabric.Text(textValue ?? "Hello", {
     fontSize: 25,
     fill: "#2BEBC8",
@@ -119,8 +114,7 @@ export const addText = (canvas?: fabric.Canvas, textValue?: string) => {
     canvasWidth,
     itemHeight: textHeight,
     itemWidth: textWidth,
-  } = getItemAndCanvasDimensions
-  (canvas, text);
+  } = getItemAndCanvasDimensions(canvas, text);
 
   text.set({
     left: (canvasWidth - textWidth) / 2,
@@ -161,8 +155,7 @@ export const canvasShapes: {
 ];
 
 // get item and canvas centers
-export const getItemAndCanvasDimensions
- = (
+export const getItemAndCanvasDimensions = (
   canvas: fabric.Canvas,
   item: fabric.Object,
 ) => {
@@ -178,7 +171,6 @@ export const getItemAndCanvasDimensions
     itemHeight,
   };
 };
-
 
 // convert any blob to mp4 blob
 export const convertBlobToMP4 = (blob: Blob) => {
