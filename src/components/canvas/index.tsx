@@ -21,11 +21,10 @@ const Canvas = () => {
   const [textValue, setTextValue] = useState("");
 
   useEffect(() => {
-    if (canvasContainerRef.current && canvasRef.current) {
+    if (canvasContainerRef.current) {
       const container = canvasContainerRef.current;
-      const canvasElement = canvasRef.current;
 
-      const c = new fabric.Canvas(canvasElement, {
+      const c = new fabric.Canvas("canvas", {
         height: container.clientHeight - 55,
         width: container.clientWidth,
         backgroundColor: "black",

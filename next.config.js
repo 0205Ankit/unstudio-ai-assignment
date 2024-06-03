@@ -11,8 +11,6 @@ await import("./src/env.js");
 const config = {
   webpack: (config) => {
     config.externals.push({
-      "utf-8-validate": "commonjs utf-8-validate",
-      bufferutil: "commonjs bufferutil",
       canvas: "commonjs canvas",
     });
 
