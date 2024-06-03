@@ -16,6 +16,9 @@ const config = {
 
     return config;
   },
+  experimental: {
+    serverComponentsExternalPackages: ["fabric"],
+  },
   images: {
     domains: ["lh3.googleusercontent.com", "utfs.io"],
     remotePatterns: [
