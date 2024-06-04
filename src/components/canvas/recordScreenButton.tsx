@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import React, { useEffect, useMemo } from "react";
 import { BsRecord2 } from "react-icons/bs";
@@ -49,7 +50,7 @@ const RecordScreenButton: React.FC = (): JSX.Element => {
       };
       void asyncFunction();
     }
-  }, [recordedBlob, startUploading]);
+  }, [recordedBlob]);
 
   useEffect(() => {
     if (memoizedUrl) {

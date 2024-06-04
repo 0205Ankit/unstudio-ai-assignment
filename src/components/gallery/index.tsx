@@ -54,7 +54,7 @@ const Gallery = () => {
                         height={180}
                         key={image.id}
                         src={image.url}
-                        className="h-[180px] w-[180px] cursor-pointer rounded-lg object-cover"
+                        className="h-[180px] w-[180px] cursor-pointer rounded-lg object-cover shadow-md"
                       />
                     ))}
                   </div>
